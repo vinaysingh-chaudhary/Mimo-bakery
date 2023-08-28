@@ -1,0 +1,106 @@
+[
+    {
+        "product_name" : "cappuccino",
+        "product_details" : "Indulge in the rich harmony of flavors with our classic cappuccino. Crafted from expertly brewed espresso, velvety steamed milk, and a delicate crown of milk foam, it's a timeless coffee masterpiece.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219458/c97itpbjqat7w9rmtteq.png",
+        "price" : "120",
+        "original_Price" : "150",
+        "category" : "coffee"
+    },
+    {
+        "product_name" : "latte",
+        "product_details" : "Savor the comforting embrace of our latte—a harmonious blend of smooth espresso and creamy steamed milk. Experience the perfect balance of bold coffee notes and silky texture in every sip.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219458/pkgs0nf0d3tjonu3zq8o.png",
+        "price" : "120",
+        "original_Price" : "150",
+        "category" : "coffee"
+    },
+    {
+        "product_name" : "cappuccino special",
+        "product_details" : "Elevate your coffee experience with our Cappuccino Special. Immerse yourself in the richness of carefully brewed espresso, topped with a luxurious layer of milk foam. A delightful twist on a classic favorite.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219459/ktoc9xytyyth8wnfsaoe.png",
+        "price" : "150",
+        "original_Price" : "180",
+        "category" : "coffee"
+    },
+    {
+        "product_name" : "cappuccino premium",
+        "product_details" : "Indulge in the extraordinary with our Cappuccino Premium. Crafted to perfection, it melds rich espresso with velvety steamed milk and a lavish crown of foam. Elevate your senses with every luxurious sip.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219458/ejcksqr9s6wchqo5sywv.png",
+        "price" : "250",
+        "original_Price" : "300",
+        "category" : "coffee"
+    },
+    {
+        "product_name" : "cappuccino treat",
+        "product_details" : "Experience pure delight with our Cappuccino Treat. Indulge in the harmony of expertly brewed espresso, creamy steamed milk, and a playful swirl of foam. A rewarding escape for your taste buds.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219458/tjrm3n3nubn1iomgc9ql.png",
+        "price" : "90",
+        "original_Price" : "120",
+        "category" : "coffee"
+    },
+    {
+        "product_name" : "Choco cup",
+        "product_details" : "Delight in our Choco Cup cupcake, a miniature joy in every bite. Moist chocolate cake crowned with a luscious swirl of cocoa-infused frosting, creating a treat that's as charming as it is delectable.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219460/wg98fcqbbegukz5k6pup.png",
+        "price" : "70",
+        "original_Price" : "80",
+        "category" : "cupcake"
+    },
+    {
+        "product_name" : "Cream and treat",
+        "product_details" : "Experience bliss with our Cream and Treat cupcake. Soft and airy cake meets a cloud of velvety cream frosting. A symphony of flavors that promises to elevate your dessert indulgence.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219460/ibwsftra7ynzn9nsgqmv.png",
+        "price" : "50",
+        "original_Price" : "60",
+        "category" : "cupcake"
+    },
+    {
+        "product_name" : "Richy bite",
+        "product_details" : "Indulge in the decadent delight of our Richy Bite cupcake. A petite masterpiece featuring moist layers infused with rich flavors, crowned by a delectable swirl of frosting. A truly sumptuous treat in every bite",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219459/ni3hat4y3slm5thwz3fj.png",
+        "price" : "70",
+        "original_Price" : "80",
+        "category" : "cupcake"
+    },
+    {
+        "product_name" : "Dark forest",
+        "product_details" : "Embark on a culinary journey with our Dark Forest dessert. Layers of moist chocolate cake interlace with luscious cherry filling and velvety whipped cream. A harmonious blend that captures the essence of a delightful forest escape.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219459/shnqbaijyfuskikbaoyj.png",
+        "price" : "70",
+        "original_Price" : "80",
+        "category" : "cupcake"
+    },    
+    {
+        "product_name" : "Cold Brew",
+        "product_details" : "Discover the ultimate refreshment with our Cold Brew. Meticulously steeped for hours, it's a smooth and bold coffee experience served over ice. A chilled escape that's invigorating and deeply satisfying.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219458/ot01xgyvkhfkrae41kgi.png",
+        "price" : "180",
+        "original_Price" : "200",
+        "category" : "cold_coffee"
+    },
+    {
+        "product_name" : "frappe",
+        "product_details" : "Experience pure bliss with our Frappe. A fusion of rich coffee, ice, and creamy milk, blended to perfection. Indulge in the delightful harmony of flavors and the energizing chill of a classic favorite.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219460/o02xehvzbjj7ya7q1jsc.png",
+        "price" : "150",
+        "original_Price" : "180",
+        "category" : "cold_coffee"
+    },
+    {
+        "product_name" : "Iced Coffee",
+        "product_details" : "Quench your thirst with our Iced Coffee. Expertly brewed and chilled to perfection, it's a rejuvenating blend of coffee and ice that delivers a refreshing and invigorating pick-me-up.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219459/q9al76sdtsxbgkqtq3mr.png",
+        "price" : "150",
+        "original_Price" : "180",
+        "category" : "cold_coffee"
+    },
+    {
+        "product_name" : "Ice cup",
+        "product_details" : "Introducing our Ice Cup Coffee, a frosty sensation that redefines refreshment. A meticulously crafted blend of chilled coffee served in a cup of ice, delivering pure coolness with each invigorating sip.",
+        "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219459/npf6dcsjoczlcb2s8e1h.png",
+        "price" : "120",
+        "original_Price" : "150",
+        "category" : "cold_coffee"
+    }
+]

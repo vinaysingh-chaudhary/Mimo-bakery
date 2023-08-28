@@ -1,14 +1,15 @@
 import { Outlet } from "react-router-dom"
+import Navbar from "./Components/Navbar"
 
 function App() {
 
 
   return (
-    <>
-      <h1>hi</h1>
+    <div className="w-screen h-screen border-pink-500 border-2">
+      <Navbar/>
       <Outlet/>
-      <h2>bye</h2>
-    </>
+     
+    </div>
   )
 }
 
