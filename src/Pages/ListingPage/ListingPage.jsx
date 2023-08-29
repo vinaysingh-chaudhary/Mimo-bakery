@@ -21,7 +21,7 @@ const ListingPage = () => {
 
   return (
     <div>
-      
+        listing
     </div>
   )
 }
