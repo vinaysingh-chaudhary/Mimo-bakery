@@ -12,9 +12,17 @@ const Navbar = () => {
     const [activeMenu, setActiveMenu] = useState(false)
     const navigate = useNavigate()
 
+    const [searchQuery, setSearchQuery] = useState("")
+
+    const searchHandler = () => {
+      if (searchQuery.length>0)
+      navigate(`search/${searchQuery}`)
+    }
+
+
 
   return (
-    <div className='h-[6%] relative flex justify-between items-center bg-[#111111]' >
+    <div className='h-[6%] relative flex justify-between items-center bg-[#000000]' >
 
         <NavLink to="/"><h1 className='text-white pl-3'>Mimo Bakers</h1></NavLink>
 
@@ -24,7 +32,14 @@ const Navbar = () => {
           <input 
           type="text" 
           className='outline-none text-white w-5/6 bg-[#111111] px-6' 
-          placeholder='Search' />
+          placeholder='Search' 
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyDown={(e) => {if(e.key==="Enter") navigate(`search/${searchQuery}`)}}
+          />
+
+          <button 
+          onClick={() => searchHandler()}
+          className='text-white'>Search</button>
 
         <button 
         onClick={() => setActiveSearch(false)} 
@@ -33,7 +48,9 @@ const Navbar = () => {
      </div>
 
 
-     <div className={`w-2/3 h-screen sm:hidden text-white bg-[#111111] absolute top-0 ${activeMenu ? "-right-1" : "-right-96"} transition-all duration-1000 `}>
+
+
+     <div className={` z-50 w-2/3 h-screen sm:hidden text-white bg-[#111111] absolute top-0 ${activeMenu ? "-right-1" : "-right-96"} transition-all duration-1000 `}>
 
         <div className='w-full flex justify-end mt-3 mr-2 '>
            <button 
@@ -41,6 +58,7 @@ const Navbar = () => {
            className= 'text-white w-1/6 flex justify-center items-center'
            ><MdClose className='text-2xl'/></button>
         </div>
+
 
 
      </div>
@@ -62,7 +80,7 @@ const Navbar = () => {
             {/* phone search button => only visible for phone */}
             
           <button onClick={() => setActiveSearch(true)} className='sm:hidden text-2xl'><HiOutlineSearch/></button>
-          <button onClick={() => navigate("/cart") } className='text-2xl'><TbShoppingCart/></button>
+          <button className='text-2xl'> <NavLink to="cart"><TbShoppingCart/></NavLink></button>
           <button onClick={() => setActiveMenu(true)} className='text-2xl sm:hidden'><RxHamburgerMenu/></button>
        </div>
 

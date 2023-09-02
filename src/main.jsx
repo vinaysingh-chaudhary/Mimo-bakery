@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
 import AboutPage from './Pages/AboutPage/AboutPage.jsx'
 import CartPage from './Pages/CartPage/CartPage.jsx'
@@ -11,6 +12,9 @@ import DetailPage from './Pages/DetailPage/DetailPage.jsx'
 import ListingPage from './Pages/ListingPage/ListingPage.jsx'
 import SearchResultPage from './Pages/SearchResultPage/SearchResultPage.jsx'
 import WishListPage from './Pages/WishListPage/WishListPage.jsx'
+import store from './Store_Redux/store.js'
+
+
 
 
 
@@ -25,23 +29,23 @@ const webAppRouting = createBrowserRouter([
             element: <ListingPage/>
           },
           {
-            path: "/details/:id",
+            path: "details/:id",
             element: <DetailPage/>
           },
           {
-            path: "/cart",
+            path: "cart",
             element: <CartPage/>
           },
           {
-            path: "/wishlist",
+            path: "wishlist",
             element: <WishListPage/>
           },
           {
-            path: "/results",
+            path: "search/:query",
             element: <SearchResultPage/>
           },
           {
-            path: "/about",
+            path: "about",
             element: <AboutPage/>
           },
         ]
@@ -50,5 +54,9 @@ const webAppRouting = createBrowserRouter([
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+
+  <Provider store={store}>
   <RouterProvider router={webAppRouting} />
+  </Provider>
+
 )
