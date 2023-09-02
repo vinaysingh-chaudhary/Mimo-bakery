@@ -8,44 +8,21 @@ import {RxHamburgerMenu} from 'react-icons/rx'
 import { NavLink } from 'react-router-dom'
  
 const Navbar = () => {
-    const [activeSearch, setActiveSearch] = useState(false)
+  
+
     const [activeMenu, setActiveMenu] = useState(false)
     const navigate = useNavigate()
 
-    const [searchQuery, setSearchQuery] = useState("")
+    // const [searchQuery, setSearchQuery] = useState("")
 
-    const searchHandler = () => {
-      if (searchQuery.length>0)
-      navigate(`search/${searchQuery}`)
-    }
+
 
 
 
   return (
-    <div className='h-[6%] relative flex justify-between items-center bg-[#000000]' >
+    <div className='h-[6%] relative flex justify-between items-center bg-[#000000] mb-0' >
 
         <NavLink to="/"><h1 className='text-white pl-3'>Mimo Bakers</h1></NavLink>
-
-
-        {/* Phone Design for search Panel only visisble for phone */}
-     <div className={`absolute w-full h-full flex ${activeSearch ? "top-0" : "-top-96"} bg-[#111111] transition-all  duration-500 sm:hidden ` }>
-          <input 
-          type="text" 
-          className='outline-none text-white w-5/6 bg-[#111111] px-6' 
-          placeholder='Search' 
-          onChange={(e) => setSearchQuery(e.target.value)}
-          onKeyDown={(e) => {if(e.key==="Enter") navigate(`search/${searchQuery}`)}}
-          />
-
-          <button 
-          onClick={() => searchHandler()}
-          className='text-white'>Search</button>
-
-        <button 
-        onClick={() => setActiveSearch(false)} 
-        className=' text-white w-1/6 flex justify-center items-center'
-        ><MdClose className='text-2xl'/></button>
-     </div>
 
 
 
@@ -79,7 +56,7 @@ const Navbar = () => {
         <div className=' flex justify-center gap-3'>
             {/* phone search button => only visible for phone */}
             
-          <button onClick={() => setActiveSearch(true)} className='sm:hidden text-2xl'><HiOutlineSearch/></button>
+          <button onClick={() => navigate("search")} className='sm:hidden text-2xl'><HiOutlineSearch/></button>
           <button className='text-2xl'> <NavLink to="cart"><TbShoppingCart/></NavLink></button>
           <button onClick={() => setActiveMenu(true)} className='text-2xl sm:hidden'><RxHamburgerMenu/></button>
        </div>

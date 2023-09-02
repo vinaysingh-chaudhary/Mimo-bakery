@@ -41,7 +41,7 @@ const webAppRouting = createBrowserRouter([
             element: <WishListPage/>
           },
           {
-            path: "search/:query",
+            path: "search",
             element: <SearchResultPage/>
           },
           {

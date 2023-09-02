@@ -24,7 +24,7 @@
         "code" : "cap2"
     },
     {
-        "product_name" : "Cappuccino premium",
+        "product_name" : "Cappucc premium",
         "product_details" : "Indulge in the extraordinary with our Cappuccino Premium. Crafted to perfection, it melds rich espresso with velvety steamed milk and a lavish crown of foam. Elevate your senses with every luxurious sip.",
         "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219458/ejcksqr9s6wchqo5sywv.png",
         "price" : "250",
@@ -76,7 +76,7 @@
         "product_details" : "Discover the ultimate refreshment with our Cold Brew. Meticulously steeped for hours, it's a smooth and bold coffee experience served over ice. A chilled escape that's invigorating and deeply satisfying.",
         "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219458/ot01xgyvkhfkrae41kgi.png",
         "price" : "180",
-        "category" : "cold_coffee",
+        "category" : "coldcoffee",
         "code" : "cb1"
     },
     {
@@ -84,7 +84,7 @@
         "product_details" : "Experience pure bliss with our Frappe. A fusion of rich coffee, ice, and creamy milk, blended to perfection. Indulge in the delightful harmony of flavors and the energizing chill of a classic favorite.",
         "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219460/o02xehvzbjj7ya7q1jsc.png",
         "price" : "150",
-        "category" : "cold_coffee",
+        "category" : "coldcoffee",
         "code" : "fr1"
     },
     {
@@ -92,7 +92,7 @@
         "product_details" : "Quench your thirst with our Iced Coffee. Expertly brewed and chilled to perfection, it's a rejuvenating blend of coffee and ice that delivers a refreshing and invigorating pick-me-up.",
         "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219459/q9al76sdtsxbgkqtq3mr.png",
         "price" : "150",
-        "category" : "cold_coffee",
+        "category" : "coldcoffee",
         "code" : "ic4"
     },
     {
@@ -100,7 +100,7 @@
         "product_details" : "Introducing our Ice Cup Coffee, a frosty sensation that redefines refreshment. A meticulously crafted blend of chilled coffee served in a cup of ice, delivering pure coolness with each invigorating sip.",
         "product_url" : "https://res.cloudinary.com/dmx424ib8/image/upload/v1693219459/npf6dcsjoczlcb2s8e1h.png",
         "price" : "120",
-        "category" : "cold_coffee",
+        "category" : "coldcoffee",
         "code" : "cpi5"
     }
 ]

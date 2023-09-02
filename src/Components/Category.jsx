@@ -6,7 +6,7 @@ import cold from '../assets/category_images/cold.png'
 const categories = [
     {id: "all", category: bakery},
     {id: "coffee", category: coffee},
-    {id: "cold_coffee", category: cold},
+    {id: "coldcoffee", category: cold},
     {id: "cupcake", category: pastry},
 ]
 
