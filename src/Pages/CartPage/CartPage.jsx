@@ -39,9 +39,19 @@ const CartPage = () => {
         </div>
 
        { cartItems?.length > 0 && 
-       <div className='w-full h-[10%] border-2'>
-                <div></div>
-              <p className='text-white'>{totalPrice}</p>
+       <div className='w-full h-[10%] text-white flex justify-center items-center'>
+                <div className='h-[100%] w-1/2 flex justify-center items-center flex-col'>
+                    <p>Item  <span className='text-2xl'>{cartItems?.length}</span>x</p>
+                    <p className='text-white'>Total Price : <span>{totalPrice}</span></p>
+                </div>
+
+          <div className='w-1/2 h-[100%] flex justify-center items-center'>
+                <button
+                      className=" w-3/4 h-1/2 rounded-3xl text-xl bg-green-500 text-white hover:bg-white hover:text-black"
+                       onClick={() => addToCart()}
+                 >Pay</button>
+          </div>
+              
         </div>}
 
     </div>
