@@ -50,24 +50,42 @@ console.log(sortBy);
 
   const filterByCategory = (category, sortBy) => {
     let newFilteredData = category === "all" ? bakeryProducts : bakeryProducts?.filter((item) => item?.category === category);
-    
-    if(sortBy ==="lowtohigh"){
-      newFilteredData = newFilteredData?.sort((a,b) => a.price - b.price)
-    }else if (sortBy ==="hightolow"){
-      newFilteredData = newFilteredData?.sort((a,b) => b.price - a.price)
-    }
     setFilteredData(newFilteredData)
+  }
+
+  const sortByPrice = (sortBy) => {
+    let sortedData = [...filteredData]; // create a new array
+    if(sortBy ==="lowtohigh"){
+      sortedData.sort((a,b) => a.price - b.price)
+    }else if (sortBy ==="hightolow"){
+      sortedData.sort((a,b) => b.price - a.price)
+    }
+  
+    setFilteredData(sortedData) // set the state with the new sorted array
   }
 
   const addToCart = (item) => {
     dispatch(add(item));
   }
 
+  
+
   return (
     <div className='h-[94%] relative bg-[#000000]' >
       <Banner />
       <Category setCategory={setCategory} filterByCategory={filterByCategory} />
-      <LayoutButtons setListView={setListView} allButtons={["Grid", "List"]} setSortBy={setSortBy} filterByCategory={() =>filterByCategory(category, sortBy)} category={category} />
+      <LayoutButtons setListView={setListView} allButtons={["Grid", "List"]}/>
+
+       <div>
+           <select value={sortBy} onChange={(e) => {
+                         setSortBy(e.target.value);
+                         sortByPrice(e.target.value);
+             }}>
+                     <option value="lowtohigh">LowToHigh</option>
+                     <option value="hightolow">High To Low</option>
+           </select>
+       </div>
+
       <div className='w-full h-[69%] flex flex-wrap justify-center gap-4 overflow-y-scroll mt-4 pb-3'>
         {
           filteredData?.map((item, index) => {
