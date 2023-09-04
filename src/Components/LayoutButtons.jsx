@@ -7,9 +7,21 @@ const layoutbtns = [
     {id: "list", img : list }
 ]
 
-const LayoutButtons = ({setListView}) => {
+const LayoutButtons = ({setListView, setSortBy, sortByPrice,sortBy}) => {
   return (
-    <div className=' w-full h-10 flex justify-end gap-1 items-center mt-2 px-2' >
+    <div className=' w-full flex justify-between items-center px-3' >
+
+     <div>
+           <select value={sortBy} onChange={(e) => { setSortBy(e.target.value); sortByPrice(e.target.value);}}
+              className='text-white bg-black border-2 rounded-md border-gray-800 pr-1 outline-none'
+           >
+                     <option  >Price</option>
+                     <option value="lowtohigh">Low To High</option>
+                     <option value="hightolow">High To Low</option>
+           </select>
+       </div>
+
+      <div className='w-2/6 h-10 flex justify-end gap-1 items-center mt-2'>
           {
             layoutbtns?.map((button) => {
                 return (
@@ -24,6 +36,7 @@ const LayoutButtons = ({setListView}) => {
                 </button>)
             })
           }
+          </div>
     </div>
   )
 }

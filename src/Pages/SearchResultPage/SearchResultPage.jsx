@@ -15,6 +15,7 @@ const SearchResultPage = () => {
   const [filteredData, setFilteredData] = useState()
   const [listView, setListView] = useState(false)
   const [searchQuery, setSearchQuery] = useState()
+  const [sortBy ,setSortBy] = useState("")
   const dispatch = useDispatch()
 
   useEffect( () => {
@@ -45,6 +46,18 @@ const SearchResultPage = () => {
       setFilteredData(newFilterData);
     }
 
+
+    const sortByPrice = (sortBy) => {
+      let sortedData = [...filteredData]; // create a new array
+      if(sortBy ==="lowtohigh"){
+        sortedData.sort((a,b) => a.price - b.price)
+      }else if (sortBy ==="hightolow"){
+        sortedData.sort((a,b) => b.price - a.price)
+      }
+    
+      setFilteredData(sortedData) // set the state with the new sorted array
+    }
+
     const addToCart = (item) => {
       dispatch(add(item));
     }
@@ -68,9 +81,9 @@ const SearchResultPage = () => {
      </div>
 
 
-     { filteredData && 
+     { filteredData?.length>0 && 
      <div className='h-[93%] flex flex-col gap-3'>
-     <LayoutButtons setListView={setListView} allButtons={[ "Grid", "List" ]}/>
+     <LayoutButtons setListView={setListView} setSortBy={setSortBy} sortByPrice={sortByPrice} sortBy={sortBy}/>
      <div className='flex flex-wrap justify-center gap-4'>
         { 
           filteredData?.map((item) => {

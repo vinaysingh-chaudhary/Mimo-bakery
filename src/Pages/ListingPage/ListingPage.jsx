@@ -74,18 +74,7 @@ console.log(sortBy);
     <div className='h-[94%] relative bg-[#000000]' >
       <Banner />
       <Category setCategory={setCategory} filterByCategory={filterByCategory} />
-      <LayoutButtons setListView={setListView} allButtons={["Grid", "List"]}/>
-
-       <div>
-           <select value={sortBy} onChange={(e) => {
-                         setSortBy(e.target.value);
-                         sortByPrice(e.target.value);
-             }}>
-                     <option value="lowtohigh">LowToHigh</option>
-                     <option value="hightolow">High To Low</option>
-           </select>
-       </div>
-
+      <LayoutButtons setListView={setListView} setSortBy={setSortBy} sortByPrice={sortByPrice} sortBy={sortBy}/>
       <div className='w-full h-[69%] flex flex-wrap justify-center gap-4 overflow-y-scroll mt-4 pb-3'>
         {
           filteredData?.map((item, index) => {

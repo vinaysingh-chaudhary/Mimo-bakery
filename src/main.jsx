@@ -8,7 +8,6 @@ import { Provider } from 'react-redux'
 import AboutPage from './Pages/AboutPage/AboutPage.jsx'
 import CartPage from './Pages/CartPage/CartPage.jsx'
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx'
-import DetailPage from './Pages/DetailPage/DetailPage.jsx'
 import ListingPage from './Pages/ListingPage/ListingPage.jsx'
 import SearchResultPage from './Pages/SearchResultPage/SearchResultPage.jsx'
 import WishListPage from './Pages/WishListPage/WishListPage.jsx'
@@ -27,10 +26,6 @@ const webAppRouting = createBrowserRouter([
           {
             path: "/",
             element: <ListingPage/>
-          },
-          {
-            path: "details/:id",
-            element: <DetailPage/>
           },
           {
             path: "cart",

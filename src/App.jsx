@@ -5,7 +5,7 @@ function App() {
 
 
   return (
-    <div className="w-screen h-screen overflow-x-hidden bg-black">
+    <div className="w-screen h-screen overflow-x-hidden bg-black font-poppins">
       <Navbar/>
       <Outlet/>
      
