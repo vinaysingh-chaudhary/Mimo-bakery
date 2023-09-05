@@ -20,7 +20,7 @@ const Navbar = () => {
 
 
   return (
-    <div className='h-[6%] relative flex justify-between items-center bg-[#000000] mb-0' >
+    <div className='h-[6%] relative flex justify-between items-center bg-[#C8B6A6] mb-0' >
 
         <NavLink to="/"><h1 className='text-white pl-3'>Mimo Bakers</h1></NavLink>
 

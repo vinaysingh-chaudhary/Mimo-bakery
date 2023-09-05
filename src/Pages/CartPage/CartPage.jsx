@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import CartProductCard from '../../Components/CartProductCard';
 import { v4 as uuidv4 } from 'uuid';
-import {TbShoppingCart} from 'react-icons/tb'
+
 
 import {remove} from '../../Store_Redux/Slices/CartSlice'
 import { useDispatch } from 'react-redux';
-import { current } from '@reduxjs/toolkit';
+
 
 const CartPage = () => {
   const cartItems = useSelector(store => store.cartSlice)
@@ -28,8 +28,8 @@ const CartPage = () => {
 
   return (
 
-    <div className='h-[94%]'>
-        <div className='h-[90%] flex items-center flex-col gap-3 bg-black overflow-y-scroll py-4'>
+    <div className='h-[94%] bg-[#F5E8E4]'>
+        <div className='h-[90%] flex items-center flex-col gap-3 overflow-y-scroll py-4'>
            { cartItems?.length > 0 
            ? (cartItems?.map((item, index) => {
               return <CartProductCard key={uuidv4()} {...item} removeCart={() =>removeCart(index)}/>
@@ -39,15 +39,15 @@ const CartPage = () => {
         </div>
 
        { cartItems?.length > 0 && 
-       <div className='w-full h-[10%] text-white flex justify-center items-center'>
+       <div className='w-full h-[10%] text-black flex justify-center items-center bg-gradient-to-br from-[#F1DEC9] via-[#A4907C] to-[#8D7B68]'>
                 <div className='h-[100%] w-1/2 flex justify-center items-center flex-col'>
                     <p>Item  <span className='text-2xl'>{cartItems?.length}</span>x</p>
-                    <p className='text-white'>Total Price : <span>{totalPrice}</span></p>
+                    <p className='text-black'>Total Price : <span>{totalPrice}</span></p>
                 </div>
 
           <div className='w-1/2 h-[100%] flex justify-center items-center'>
                 <button
-                      className=" w-3/4 h-1/2 rounded-3xl text-xl bg-green-500 text-white hover:bg-white hover:text-black"
+                      className=" w-3/4 h-1/2 rounded-3xl text-xl bg-green-500 text-black hover:bg-white hover:text-black"
                        onClick={() => addToCart()}
                  >Pay</button>
           </div>

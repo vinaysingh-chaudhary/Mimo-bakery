@@ -17,8 +17,8 @@ const ProductCard = ({
 
   return (
     <div className={`${listView
-      ? "w-[93%] h-[130px] rounded-md flex justify-center items-center gap-9 px-8 py-2 bg-gradient-to-br from-gray-900 via-gray-900 to-black"
-      : "w-[180px] h-[250px] rounded-md flex flex-col justify-center items-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-950 to-black "}`}
+      ? "w-[94%] h-[130px] rounded-md flex justify-center items-center gap-9 px-8 py-2 bg-gradient-to-br from-[#F1DEC9] via-[#A4907C] to-[#8D7B68]"
+      : "w-[185px] h-[250px] rounded-md flex flex-col justify-center items-center bg-gradient-to-br from-[#F1DEC9] via-[#A4907C] to-[#8D7B68]"}`}
     >
 
 
@@ -49,7 +49,7 @@ const ProductCard = ({
         >
         </div>
 
-        <div className='w-2/3 h-[60%] border-2 py-4 border-gray-800 flex flex-col justify-around items-center absolute bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900 via-gray-950 to-black  rounded-md '>
+        <div className='w-2/3 h-[60%] py-4 flex flex-col justify-around items-center absolute bg-gradient-to-br from-[#F1DEC9] via-[#A4907C] to-[#8D7B68] rounded-lg '>
               <img src={product_url} alt="" className="h-1/2 object-contain "/>
 
               <div className="h-1/2 w-full flex justify-center items-center px-2 flex-col gap-2 ">

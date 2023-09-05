@@ -19,11 +19,11 @@ const Category = ({setCategory, filterByCategory}) => {
     }
 
     return (
-        <div className="w-full h-16 flex bg-black">
+        <div className="w-full h-16 flex bg-[#C8B6A6] ">
             {categories.map((categ) => {
                 return( 
                 <button 
-                    className={`w-1/4 bg-black flex justify-center items-center`}
+                    className={`w-1/4 flex justify-center items-center`}
                     key={categ.id}
                     onClick={() =>handleSetID(categ.id)}
                 >

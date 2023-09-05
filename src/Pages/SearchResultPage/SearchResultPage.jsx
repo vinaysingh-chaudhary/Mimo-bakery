@@ -63,12 +63,12 @@ const SearchResultPage = () => {
     }
 
   return (
-    <div className='w-full h-[94%] bg-black flex flex-col justify-between'>
+    <div className='w-full h-[94%]  flex flex-col justify-between'>
 
-    <div className="w-full  h-14 flex bg-[#111111] -mt-1 ">
+    <div className="w-full  h-14 flex bg-[#c0aa97] -mt-1 ">
           <input 
           type="text" 
-          className='outline-none text-white w-5/6 bg-[#111111] px-6 border-none' 
+          className='outline-none text-black w-5/6 bg-[#c0aa97] px-6 border-none' 
           placeholder='Search' 
           onChange={(e) => setSearchQuery(e.target.value)}
           onKeyDown={(e) => {if(e.key==="Enter") filterBySearch(searchQuery)}}

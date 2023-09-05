@@ -71,7 +71,7 @@ console.log(sortBy);
   
 
   return (
-    <div className='h-[94%] relative bg-[#000000]' >
+    <div className='h-[94%] relative bg-[#F5E8E4]' >
       <Banner />
       <Category setCategory={setCategory} filterByCategory={filterByCategory} />
       <LayoutButtons setListView={setListView} setSortBy={setSortBy} sortByPrice={sortByPrice} sortBy={sortBy}/>

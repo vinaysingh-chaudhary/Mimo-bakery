@@ -13,11 +13,11 @@ const LayoutButtons = ({setListView, setSortBy, sortByPrice,sortBy}) => {
 
      <div>
            <select value={sortBy} onChange={(e) => { setSortBy(e.target.value); sortByPrice(e.target.value);}}
-              className='text-white bg-black border-2 rounded-md border-gray-800 pr-1 outline-none'
+              className='text-black bg-[#C8B6A6] border-2 rounded-md border-white pr-1 outline-none'
            >
-                     <option  >Price</option>
-                     <option value="lowtohigh">Low To High</option>
-                     <option value="hightolow">High To Low</option>
+                     <option className=' bg-transparent'  >Price</option>
+                     <option value="lowtohigh" className=''>Low To High</option>
+                     <option value="hightolow" className=''>High To Low</option>
            </select>
        </div>
 
@@ -28,7 +28,7 @@ const LayoutButtons = ({setListView, setSortBy, sortByPrice,sortBy}) => {
                 <button 
                     key={button.id} 
                     onClick={() => setListView(button.id === "list" ? true : false)}
-                    className=' w-10 h-full flex justify-center items-center bg-[#171717] rounded-md' 
+                    className=' w-10 h-full flex justify-center items-center bg-[#C8B6A6] rounded-md' 
                     >
                     <img 
                     src={button.img} alt=""
