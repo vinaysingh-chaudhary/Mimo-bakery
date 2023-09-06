@@ -2,19 +2,62 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import CartProductCard from '../../Components/CartProductCard';
 import { v4 as uuidv4 } from 'uuid';
-
-
+import logo from '../../../public/vite.png'
 import {remove} from '../../Store_Redux/Slices/CartSlice'
 import { useDispatch } from 'react-redux';
 
 
+
+const loadRazerpayScript  = (src) => {
+  return new Promise( (resolve => {
+    const script = document.createElement('script');
+    script.src = src
+    script.onload = () => {
+      resolve(true)
+    }
+    script.onerror = () => {
+      resolve(false)
+    }
+    document.body.appendChild(script) 
+  }))}
+
+
 const CartPage = () => {
+
   const cartItems = useSelector(store => store.cartSlice)
   const dispatch = useDispatch()
   const [totalPrice, setTotalPrice] = useState(0)
+  const razorpay_key = import.meta.env.VITE_RAZORPAY_API_KEY;
 
-  // console.log(cartItems);
-  console.log(totalPrice);
+
+
+    const displayRazorpay = async() => {
+        const result = await loadRazerpayScript("https://checkout.razorpay.com/v1/checkout.js")
+
+        if(!result){
+          alert("Payment gatway failed to load");
+          return
+        }
+
+      const options = {
+        "key":  razorpay_key, 
+        "amount": (totalPrice*100).toString(), 
+        "currency": "INR",
+
+        "name": "Mimo Bakery", 
+        "description": "Thankyou for becoming our bakery's customer",
+        "image": logo,
+        "receipt" : uuidv4(),
+        "prefill": { 
+            "name": "Ashwry", 
+        },
+    };
+
+    const paymentObject = new Razorpay(options);
+    paymentObject.open()
+    }
+
+
 
   const removeCart =(index) => {
       dispatch(remove(index))
@@ -48,7 +91,7 @@ const CartPage = () => {
           <div className='w-1/2 h-[100%] flex justify-center items-center'>
                 <button
                       className=" w-3/4 h-1/2 rounded-3xl text-xl bg-green-500 text-black hover:bg-white hover:text-black"
-                       onClick={() => addToCart()}
+                      onClick={() =>displayRazorpay()}
                  >Pay</button>
           </div>
               
