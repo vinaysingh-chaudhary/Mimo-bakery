@@ -11,7 +11,7 @@ const categories = [
 ]
 
 
-const Category = ({setCategory, filterByCategory}) => {
+const Category = ({setCategory, filterByCategory, category}) => {
 
     const handleSetID = (category) => {
         setCategory(category)
@@ -19,15 +19,17 @@ const Category = ({setCategory, filterByCategory}) => {
     }
 
     return (
-        <div className="w-full h-16 flex bg-[#C8B6A6] ">
+        <div className="w-full md:w-2/3 md:mt-2 md:rounded-md lg:w-3/6 h-16 md:h-[4.5rem] lg:h-[7rem] flex justify-around bg-[#C8B6A6] ">
             {categories.map((categ) => {
                 return( 
                 <button 
-                    className={`w-1/4 flex justify-center items-center`}
+                    className={`w-1/4 flex flex-col gap-1 justify-center items-center relative`}
                     key={categ.id}
                     onClick={() =>handleSetID(categ.id)}
                 >
-                <img src={categ.category}  className='w-10 hover:scale-110' alt="" /></button>)
+                <img src={categ.category}  className='w-10 lg:h-[60%] h-[65%] md:h-[70%] hover:scale-110 md:pt-1 z-20' alt="" />
+                {  category ===  categ.id && <div className='absolute  top-0 right-0 bg-[#b79d87] w-full h-full z-0 rounded-md'></div> }
+                </button>)
             })}
         </div>
     )

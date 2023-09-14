@@ -15,7 +15,6 @@ const SearchResultPage = () => {
   const [filteredData, setFilteredData] = useState()
   const [listView, setListView] = useState(false)
   const [searchQuery, setSearchQuery] = useState()
-  const [sortBy ,setSortBy] = useState("")
   const dispatch = useDispatch()
 
   useEffect( () => {
@@ -40,50 +39,38 @@ const SearchResultPage = () => {
     };
   },[]) 
 
-
+  
     const filterBySearch = (searchQuery)=> {
       const newFilterData =  bakeryProducts?.filter((item) => item?.product_name?.toLowerCase()?.includes(searchQuery))
       setFilteredData(newFilterData);
     }
 
 
-    const sortByPrice = (sortBy) => {
-      let sortedData = [...filteredData]; // create a new array
-      if(sortBy ==="lowtohigh"){
-        sortedData.sort((a,b) => a.price - b.price)
-      }else if (sortBy ==="hightolow"){
-        sortedData.sort((a,b) => b.price - a.price)
-      }
-    
-      setFilteredData(sortedData) // set the state with the new sorted array
-    }
-
     const addToCart = (item) => {
       dispatch(add(item));
     }
 
   return (
-    <div className='w-full h-[94%]  flex flex-col justify-between'>
+    <div className='w-full h-[94%]  flex flex-col justify-between items-center gap-5'>
 
-    <div className="w-full  h-14 flex bg-[#c0aa97] -mt-1 ">
+    <div className="w-full md:w-3/6 lg:w-2/6  h-14 flex justify-between bg-[#c0aa97] -mt-1 md:mt-4 md:rounded-md ">
           <input 
           type="text" 
-          className='outline-none text-black w-5/6 bg-[#c0aa97] px-6 border-none' 
-          placeholder='Search' 
-          onChange={(e) => setSearchQuery(e.target.value)}
+          className='outline-none text-black w-5/6 bg-[#c0aa97] px-6 border-none md:rounded-md' 
+          placeholder='Search your caffeine' 
+          onChange={(e) => setSearchQuery(e.target.value.length>0? e.target.value : "")}
           onKeyDown={(e) => {if(e.key==="Enter") filterBySearch(searchQuery)}}
           />
 
           <button 
           onClick={() => filterBySearch(searchQuery)}
-          className='text-white'>Search</button>
+          className='text-white md:pr-6 pr-3'>Search</button>
 
      </div>
 
 
      { filteredData?.length>0 && 
-     <div className='h-[93%] flex flex-col gap-3'>
-     <LayoutButtons setListView={setListView} setSortBy={setSortBy} sortByPrice={sortByPrice} sortBy={sortBy}/>
+     <div className='h-[93%] flex flex-col gap-3 mt'>
      <div className='flex flex-wrap justify-center gap-4'>
         { 
           filteredData?.map((item) => {

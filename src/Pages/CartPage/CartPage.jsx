@@ -77,7 +77,7 @@ const CartPage = () => {
            ? (cartItems?.map((item, index) => {
               return <CartProductCard key={uuidv4()} {...item} removeCart={() =>removeCart(index)}/>
             })) 
-            : (<div className=' h-full w-2/3 flex justify-center items-center text-xl text-white'><p className='text-center'>{`Dude add something =( your cart is empty`}</p></div>)
+            : (<div className=' h-full w-2/3 flex justify-center items-center text-xl text-black'><p className='text-center'>{` Add something =( your cart is empty`}</p></div>)
            }
         </div>
 

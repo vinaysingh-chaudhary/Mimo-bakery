@@ -1,4 +1,5 @@
 import React from 'react'
+import toast from 'react-hot-toast'
 
 const CartProductCard = ({
     product_name,
@@ -11,7 +12,7 @@ const CartProductCard = ({
     // console.log(id);
 
   return (
-    <div className='w-[95%] h-[130px] rounded-md flex justify-around items-center bg-gradient-to-br from-[#F1DEC9] via-[#A4907C] to-[#8D7B68]'>
+    <div className='w-[95%] lg:w-[48%] h-[130px] rounded-md flex justify-around items-center bg-gradient-to-br from-[#F1DEC9] via-[#A4907C] to-[#8D7B68]'>
          
            <img src={product_url} className="h-[110px] aspect-square object-contain py-2" alt="" />
             
@@ -24,7 +25,7 @@ const CartProductCard = ({
             <p   className="text-center text-white">{price} INR</p>
             <button
                      className="border-2 border-white w-24 rounded-2xl mt-3  text-white hover:bg-white hover:text-black"
-                     onClick={() => removeCart()}
+                     onClick={() => {removeCart(), toast.success("Removed from cart")}}
                  >Remove</button>
             </div>
     </div>

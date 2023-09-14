@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { add } from '../../Store_Redux/Slices/CartSlice';
 import { useDispatch } from 'react-redux';
+import ShimmerEffect from '../../Components/ShimmerEffect';
 
 
 
@@ -21,6 +22,7 @@ const ListingPage = () => {
   const [category, setCategory] = useState("all")
   const [sortBy ,setSortBy] = useState("")
   const dispatch = useDispatch()
+  const [loading, setloading] = useState(true);
 
 
 console.log(sortBy);
@@ -31,10 +33,12 @@ console.log(sortBy);
 
     const DataAPICall = async () => {
       try {
+        setloading(true)
         const response = await fetch("/api/bakery");
         const json = await response.json();
         setBakeryProducts(json.data)
         setFilteredData(json.data)
+        setloading(false)
       } catch (error) {
         console.log(error)
       }
@@ -70,13 +74,13 @@ console.log(sortBy);
 
   
 
-  return (
-    <div className='h-[94%] relative bg-[#F5E8E4]' >
+  return ( 
+    <div className='h-[94%] relative bg-[#F5E8E4] flex flex-col items-center lg:gap-1' >
       <Banner />
-      <Category setCategory={setCategory} filterByCategory={filterByCategory} />
+      <Category setCategory={setCategory} filterByCategory={filterByCategory} category={category}/>
       <LayoutButtons setListView={setListView} setSortBy={setSortBy} sortByPrice={sortByPrice} sortBy={sortBy}/>
-      <div className='w-full h-[69%] flex flex-wrap justify-center gap-4 overflow-y-scroll mt-4 pb-3'>
-        {
+      <div className='w-full h-[69%] lg:h-[90%] flex flex-wrap justify-center gap-4 overflow-y-scroll mt-4 pb-3 scroll-smooth'>
+        { loading ? (<ShimmerEffect/>) : 
           filteredData?.map((item, index) => {
             return <ProductCard id={uuidv4()} key={uuidv4()} {...item} listView={listView} addToCart={() => addToCart(item)}/>
           })

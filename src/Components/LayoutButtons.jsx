@@ -9,9 +9,9 @@ const layoutbtns = [
 
 const LayoutButtons = ({setListView, setSortBy, sortByPrice,sortBy}) => {
   return (
-    <div className=' w-full flex justify-between items-center px-3' >
+    <div className=' w-full flex justify-around items-center md:w-2/3' >
 
-     <div>
+     <div className=''>
            <select value={sortBy} onChange={(e) => { setSortBy(e.target.value); sortByPrice(e.target.value);}}
               className='text-black bg-[#C8B6A6] border-2 rounded-md border-white pr-1 outline-none'
            >
@@ -21,7 +21,7 @@ const LayoutButtons = ({setListView, setSortBy, sortByPrice,sortBy}) => {
            </select>
        </div>
 
-      <div className='w-2/6 h-10 flex justify-end gap-1 items-center mt-2'>
+      <div className='w-1/4 h-10 flex justify-end gap-1 items-center mt-2 lg:hidden'>
           {
             layoutbtns?.map((button) => {
                 return (
