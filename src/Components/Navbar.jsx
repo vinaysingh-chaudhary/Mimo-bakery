@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import {TbShoppingCart} from 'react-icons/tb'
 import {MdClose} from 'react-icons/md'
 import {RxHamburgerMenu} from 'react-icons/rx'
-import cookieImg from '../../public/vite.png'
+import logo from '../../public/logo.png'
 
 import { NavLink } from 'react-router-dom'
  
@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <div className='h-[6%] relative flex justify-between items-center bg-[#C8B6A6] mb-0' >
 
-        <NavLink to="/"><p className='text-black text-lg pl-3 flex gap-2'><img src={cookieImg} alt="" /> Mimo Bakers </p></NavLink>
+        <NavLink to="/"><p className='text-black text-3xl pl-3 flex gap-2 justify-center items-center'><img src={logo} alt="Logo"  className='h-[30px]'/> Mimo Bakers </p></NavLink>
 
 
 
